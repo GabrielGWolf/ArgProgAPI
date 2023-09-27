@@ -9,14 +9,14 @@ function App() {
   return (
     <>
       <h1>Dashboard con API</h1>
-      <div className="contenedor-gral">
+      <div className="dia">
         <Dia />
-        <div className="seccion-arriba">
-          <ClimaDashboard />
-        </div>
-        <div className="seccion-abajo">
-          <TransitoDashboard />
-        </div>
+      </div>
+      <div className="clima">
+        <ClimaDashboard />
+      </div>
+      <div className="transito">
+        <TransitoDashboard />
       </div>
     </>
   );

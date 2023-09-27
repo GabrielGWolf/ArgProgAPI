@@ -5,90 +5,29 @@ body {
   padding: 0.5vh 0.5vw;
 }
 
-.contenedor-gral {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: whitesmoke;
-  min-height: 100vh;
-  text-align: center;
-  align-items: center;
-  margin: 0.5vh 0.5vw;
-  padding: 0.5vh 0.5vw;
+.dia {
+  max-height: 10vh;
+  /* El máximo del 10% de la altura de la pantalla */
+  min-height: 10vh;
+  /* El mínimo del 10% de la altura de la pantalla */
+  white-space: nowrap;
+  /* Evita el salto de línea */
+  overflow: hidden;
+  /* Oculta cualquier contenido que desborde */
+  text-overflow: ellipsis;
+  /* Muestra puntos suspensivos (...) si el contenido desborda */
+  overflow: auto;
 }
 
-.seccion-arriba {
-  min-height: 50vh;
-  min-width: 97vw;
-  display: flex;
-  margin: 0.2vh 0.2vw;
-  padding: 0.2vh 0.2vw;
-  border-radius: 5px;
-  background-color: azure;
-  justify-content: center;
+.clima {
+  flex: 1; /* Ocupa el 50% del espacio disponible */
+  padding: 10px; /* Añade espacio de relleno si es necesario */
+  border: solid blue;
 }
 
-.seccion-abajo {
-  min-height: 50vh;
-  /* max-height: 50vh */;
-  min-width: 97vw;
-  /* max-width: 97vw */;
-  display: flex;
-  margin: 10px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #decfcf;
-  border: 3px solid black;
-  text-align: center;
-  align-items: center;
-  margin: 10px;
-  padding: 5px;
-}
-
-.contenedor-clima {
-  display: flex;
-  flex-direction: column;
-  border: 3px solid black;
-  text-align: center;
-  align-items: center;
-  background-color:azure;
-  margin: 0.5vh 0.5vw;
-  padding: 0.5vh 0.5vw;
-}
-
-.contenedor1 {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  margin: 0.5vh 0.5vw;
-  padding: 0.5vh 0.5vw;
-}
-
-.contenedor2 {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 0.5vh 0.5vw;
-  padding: 0.5vh 0.5vw;
-}
-
-.linea {
-  display: flex;
-  gap: 2px 2px;
-  text-align: center;
-  align-items: center;
-  margin: 10px;
-  padding: 10px;
-  max-height: 20vh;
-  }
-
-.item {
-  margin: 5px;
-  padding: 5px;
-  text-align: center;
-  align-items: center;
-  margin: 0.5vh 0.5vw;
-  padding: 0.5vh 0.5vw;  
+.transito {
+  flex: 1; /* Ocupa el 50% del espacio disponible */
+  padding: 10px; /* Añade espacio de relleno si es necesario */
+  border: solid red;
 }
 
