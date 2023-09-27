@@ -2,8 +2,8 @@
 
 function transitoDashboard(){
     return (
-      <div className="transito-dashboard">
-        <h3>Transito de mi Ciuidad</h3>
+      <div className="transito">
+        <h3>Transito de mi Ciudad</h3>
         <p>Colectivo linea: 18 </p>
         <p> - aca debería haber un mapa - </p>
       </div>
