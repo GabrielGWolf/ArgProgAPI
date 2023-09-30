@@ -4,10 +4,10 @@ import Temperatura from './temperatura';
 import styled from 'styled-components';
 
 const ContenedorClima = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+display: grid;
+grid-template-columns: repeat(2, 1fr); 
+grid-template-rows: repeat(1, 1fr); 
+gap: 10px;
 `;
 
 const SeccionTemperatura = styled.div`
