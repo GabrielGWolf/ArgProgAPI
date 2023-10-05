@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ArgProgAPI/static/css/main.d395bcce.css",
-    "main.js": "/ArgProgAPI/static/js/main.d9ea56d2.js",
+    "main.css": "/ArgProgAPI/static/css/main.78d35bd9.css",
+    "main.js": "/ArgProgAPI/static/js/main.ef9562e2.js",
     "static/js/787.46c2b972.chunk.js": "/ArgProgAPI/static/js/787.46c2b972.chunk.js",
     "static/media/rainbow-clear.svg": "/ArgProgAPI/static/media/rainbow-clear.9446e323df8567b1ec0c575247d62681.svg",
     "static/media/starry-night.svg": "/ArgProgAPI/static/media/starry-night.509aeabb26c7a8f18dc5b88986e22b67.svg",
@@ -18,12 +18,12 @@
     "static/media/horizon.svg": "/ArgProgAPI/static/media/horizon.a471d7d512916708b4b5a13bc9d95044.svg",
     "static/media/barometer.svg": "/ArgProgAPI/static/media/barometer.8b6e33cb1de88118509b26e7a8860a5d.svg",
     "index.html": "/ArgProgAPI/index.html",
-    "main.d395bcce.css.map": "/ArgProgAPI/static/css/main.d395bcce.css.map",
-    "main.d9ea56d2.js.map": "/ArgProgAPI/static/js/main.d9ea56d2.js.map",
+    "main.78d35bd9.css.map": "/ArgProgAPI/static/css/main.78d35bd9.css.map",
+    "main.ef9562e2.js.map": "/ArgProgAPI/static/js/main.ef9562e2.js.map",
     "787.46c2b972.chunk.js.map": "/ArgProgAPI/static/js/787.46c2b972.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d395bcce.css",
-    "static/js/main.d9ea56d2.js"
+    "static/css/main.78d35bd9.css",
+    "static/js/main.ef9562e2.js"
   ]
 }
