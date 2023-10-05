@@ -22,7 +22,6 @@ body {
 .clima {
   flex: 1; /* Ocupa el 50% del espacio disponible */
   padding: 10px; /* Añade espacio de relleno si es necesario */
-  border: solid blue;
 }
 
 .transito {

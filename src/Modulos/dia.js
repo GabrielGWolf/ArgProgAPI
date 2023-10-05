@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TarjetaReversible from './TarjetaReversible';
+import TarjetaEstatica from './TarjetaEstatica'
 import ClimaAPI from './modulosClima/climaAPI.json'
 
 
@@ -11,32 +12,25 @@ grid-template-rows: repeat(1, 1fr); /* Divide en 2 filas */
 gap: 10px; /* Espacio entre las tarjetas */
 `;
 
-const Fecha = String(ClimaAPI.current_weather.time).slice(0,10)
+const Fecha = String(ClimaAPI.current_weather.time).slice(0, 10)
 const Hora = String(ClimaAPI.current_weather.time).slice(-5)
 
 function Dia() {
   return (
-    <DiaContainer>
 
-      <TarjetaReversible
-        imagenFrente={""}
-        tituloFrente={"Fecha: " + Fecha}
-        contenidoFrente={"Hora: " + Hora}
-        imagenDorso={""}
-        tituloDorso={"Fecha: " + Fecha}
-        contenidoDorso={"Hora: " + Hora}
+    <DiaContainer>
+      <TarjetaEstatica
+        titulo={"Fecha: " + Fecha}
+        contenido={"Hora: " + Hora}
       />
 
-      <TarjetaReversible
-        imagenFrente={""}
-        tituloFrente={"Provincia: Tucumán"}
-        contenidoFrente={"Ciudad: San Miguel de Tucumán"}
-        imagenDorso={""}
-        tituloDorso={"Latitud: " + ClimaAPI.latitude}
-        contenidoDorso={"Longitud: " + ClimaAPI.longitude}
+      <TarjetaEstatica
+        titulo={"Provincia: Tucumán"}
+        contenido={"Ciudad: San Miguel de Tucumán"}
       />
     </DiaContainer>
   );
 }
+
 
 export default Dia;

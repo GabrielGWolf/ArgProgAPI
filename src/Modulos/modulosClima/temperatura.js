@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 /* componente tarjetas */
 import TarjetaReversible from '../TarjetaReversible';
+import TarjetaEstatica from '../TarjetaEstatica';
 /* imagenes */
 import TemperaturaImg from '../../Assets/iconos/thermometer-celsius.svg'
 import TemperaturaMaxImg from '../../Assets/iconos/thermometer-warmer.svg'
@@ -16,8 +17,7 @@ const ContenedorTemp = styled.div`
   display: grid;
   gap: 10px; /* Espacio entre las tarjetas */
   align-items: center; /* Centra los elementos horizontalmente */
-  border: solid black
-`;
+  `;
 
 const SectorArriba = styled.div`
   display: grid;
@@ -28,7 +28,6 @@ const SectorArriba = styled.div`
   `;
 
 const SectorAbajo = styled.div`
-border: solid blue
 display: block
 `; 
 
@@ -66,14 +65,14 @@ function Temperatura() {
   ];
 
   /// Función para calcular el color de fondo en función de la temperatura
-  const calcularColorFondo = (temperatura) => {
-    if (temperatura <= 10) {
+  const calcularColorFondo = () => {
+    if (ClimaAPI.current_weather.temperature <= 10) {
       return '#0000ff'; // Azul oscuro para clima frío
-    } else if (temperatura <= 17) {
+    } else if (ClimaAPI.current_weather.temperature <= 17) {
       return '#e0ffff'; // Celeste para clima fresco
-    } else if (temperatura <= 23) {
+    } else if (ClimaAPI.current_weather.temperature <= 23) {
       return '#90ee90'; // Verde para clima ideal
-    } else if (temperatura <= 30) {
+    } else if (ClimaAPI.current_weather.temperature <= 30) {
       return '#ffffe0'; // Amarillo para clima levemente cálido
     } else {
       return '#ff4c4c'; // Rojo para clima muy caliente
@@ -95,6 +94,8 @@ function Temperatura() {
   const NombreEstadoClima = CodigoClima[contEstadoClima].name
 
 
+const CaF= ((ClimaAPI.current_weather.temperature * 9/5)+32)
+
 
 
 
@@ -103,14 +104,11 @@ function Temperatura() {
       
       <SectorArriba>
 
-      <TarjetaReversible
-      imagenFrente={TemperaturaImg}
-          tituloFrente= "Temperatura Actual:"
-          contenidoFrente=""
-          imagenDorso={TemperaturaImg}
-          tituloDorso={ClimaAPI.current_weather.temperature + ClimaAPI.hourly_units.temperature_2m}
-          contenidoDorso=""
-          />
+      <TarjetaEstatica
+        titulo={"Temperatura Actual : " + ClimaAPI.current_weather.temperature + ClimaAPI.hourly_units.temperature_2m}
+        contenido={"Temperatura Actual en °F: " + CaF + "°F"}
+        imagen={TemperaturaImg}
+      />
 
         <TarjetaReversible
         imagenFrente={EstadoClimaImg}
