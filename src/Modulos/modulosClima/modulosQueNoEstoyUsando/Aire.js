@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import TarjetaReversible from '../TarjetaReversible';
+import TarjetaReversible from '../../TarjetaReversible';
+import ClimaAPI from '../climaAPI.json'
+
 
 /* imagenes */
 import BarometroImg from '../../Assets/iconos/barometer.svg'
@@ -19,8 +21,8 @@ const calidadAire = "Calidad del Aire";
 const contCalidadAire = "Bueno";
 const visibilidad = "Visibilidad";
 const contVisibilidad = "22km";
-const humedad = "Humedad";
-const contHumedad = "40%";
+const humedad = "Máxima humedad del día"
+const contHumedad = (Math.max(...ClimaAPI.hourly.relativehumidity_2m)) + ClimaAPI.hourly_units.relativehumidity_2m
 
 
 function Aire() {

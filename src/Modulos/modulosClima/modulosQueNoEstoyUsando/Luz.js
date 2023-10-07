@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import TarjetaReversible from '../TarjetaReversible';
+import TarjetaReversible from '../../TarjetaReversible';
 
 /* imagenes */
 import HorizonteImg from '../../Assets/iconos/horizon.svg'
@@ -10,7 +10,7 @@ import AmanecerImg from '../../Assets/iconos/sunrise.svg'
 import AnochecerImg from '../../Assets/iconos/sunset.svg'
 /* /imagenes */
 
-import ClimaAPI from './climaAPI.json'
+import ClimaAPI from '../climaAPI.json'
 
 const DatosContainer = styled.div`
 display: grid;

@@ -21,18 +21,20 @@ const ContenedorTemp = styled.div`
 
 const SectorArriba = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Divide en 2 columnas */
-  grid-template-rows: repeat(2, 1fr); /* Divide en 2 filas */
+  grid-template-columns: repeat(4, 1fr); /* Divide en 2 columnas */
+  grid-template-rows: repeat(1, 1fr); /* Divide en 2 filas */
   gap: 10px; /* Espacio entre las tarjetas */
   align-items: center; /* Centra los elementos horizontalmente */
   `;
 
 const SectorAbajo = styled.div`
 display: block
+align-items: center; /* Centra los elementos horizontalmente */
 `; 
 
 const ContendorGraficos = styled.div`
   margin-top: 0.1fr;
+  align-items: center; /* Centra los elementos horizontalmente */
 `;
 
 function Temperatura() {
@@ -144,7 +146,7 @@ const CaF= ((ClimaAPI.current_weather.temperature * 9/5)+32)
       <SectorAbajo>
         <ContendorGraficos>
           <p>Gráfico de temperatura a lo largo del día</p>
-          <LineChart width={850} height={300} data={datosTemperaturaHoy}>
+          <LineChart width={900} height={200} data={datosTemperaturaHoy}>
             <XAxis dataKey="hora" />
             <YAxis dataKey="temperatura" />
             <CartesianGrid strokeDasharray="3 3" />

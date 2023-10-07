@@ -14,7 +14,6 @@ const TarjetaContainer = styled.div`
   perspective: 1000px;
   transform: rotateX(2deg);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
   background-color: #cce3de; /* Fondo principal de la tarjeta */
 `;
 
@@ -95,14 +94,14 @@ const TarjetaReversible = ({
     <TarjetaContainer>
       <Frente>
         <img src={imagenFrente} alt="Frente" />
-        <span>{tituloFrente}</span>
-        <span>{contenidoFrente}</span>
+        <p>{tituloFrente}</p>
+        <p>{contenidoFrente}</p>
       </Frente>
       <Dorso colorFondoContenido={colorFondoContenido}>
         <img src={imagenDorso} alt="Dorso" />
-        <span>{tituloDorso}</span>
+        <p>{tituloDorso}</p>
         <div className="contenido">
-          <span>{contenidoDorso}</span>
+          <p>{contenidoDorso}</p>
         </div>
       </Dorso>
     </TarjetaContainer>

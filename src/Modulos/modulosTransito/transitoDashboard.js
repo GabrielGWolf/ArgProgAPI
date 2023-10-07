@@ -7,6 +7,8 @@ function transitoDashboard(){
         <p>Colectivo linea: 18 </p>
         <p> - aca debería haber un mapa - </p>
       </div>
+
+      
     );
   }
   
