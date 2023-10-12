@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import TarjetaReversible from './TarjetaReversible';
 import TarjetaEstatica from './TarjetaEstatica'
 import ClimaAPI from './modulosClima/climaAPI.json'
 

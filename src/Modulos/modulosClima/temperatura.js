@@ -10,7 +10,6 @@ import TemperaturaMaxImg from '../../Assets/iconos/thermometer-warmer.svg'
 import TemperaturaMinImg from '../../Assets/iconos/thermometer-colder.svg'
 import EstadoClimaImg from '../../Assets/iconos/rainbow-clear.svg'
 /* JSON */
-import ClimaAPI from './climaAPI.json'
 import CodigoClima from './codigoClima.json'
 
 const ContenedorTemp = styled.div`
@@ -30,133 +29,138 @@ const SectorArriba = styled.div`
 const SectorAbajo = styled.div`
 display: block
 align-items: center; /* Centra los elementos horizontalmente */
-`; 
+`;
 
 const ContendorGraficos = styled.div`
   margin-top: 0.1fr;
   align-items: center; /* Centra los elementos horizontalmente */
 `;
 
-function Temperatura() {
+function Temperatura({ datosClima, loading }) {
   // Datos de ejemplo para el gráfico
-  const datosTemperaturaHoy = [
-    { hora: String(ClimaAPI.hourly.time[0] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[0]},
-    { hora: String(ClimaAPI.hourly.time[1] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[1]},
-    { hora: String(ClimaAPI.hourly.time[2] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[2]},
-    { hora: String(ClimaAPI.hourly.time[3] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[3]},
-    { hora: String(ClimaAPI.hourly.time[4] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[4]},
-    { hora: String(ClimaAPI.hourly.time[5] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[5]},
-    { hora: String(ClimaAPI.hourly.time[6] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[6]},
-    { hora: String(ClimaAPI.hourly.time[7] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[7]},
-    { hora: String(ClimaAPI.hourly.time[8] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[8]},
-    { hora: String(ClimaAPI.hourly.time[9] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[9]},
-    { hora: String(ClimaAPI.hourly.time[10]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[10]},
-    { hora: String(ClimaAPI.hourly.time[11]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[11]},
-    { hora: String(ClimaAPI.hourly.time[12]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[12]},
-    { hora: String(ClimaAPI.hourly.time[13]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[13]},
-    { hora: String(ClimaAPI.hourly.time[14]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[14]},
-    { hora: String(ClimaAPI.hourly.time[15]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[15]},
-    { hora: String(ClimaAPI.hourly.time[16]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[16]},
-    { hora: String(ClimaAPI.hourly.time[17]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[17]},
-    { hora: String(ClimaAPI.hourly.time[18]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[18]},
-    { hora: String(ClimaAPI.hourly.time[19]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[19]},
-    { hora: String(ClimaAPI.hourly.time[20]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[20]},
-    { hora: String(ClimaAPI.hourly.time[21]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[21]},
-    { hora: String(ClimaAPI.hourly.time[22]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[22]},
-    { hora: String(ClimaAPI.hourly.time[23]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[23]},
-  ];
+
+  const datosTemperaturaHoy = datosClima.hourly.time.map((hora, index) => ({
+    hora: String(hora).slice(-5),
+    temperatura: datosClima.hourly.temperature_2m[index],
+  }));
 
   /// Función para calcular el color de fondo en función de la temperatura
-  const calcularColorFondo = () => {
-    if (ClimaAPI.current_weather.temperature <= 10) {
+  const calcularColorFondo = (tempColor) => {
+    if (tempColor <= 5) {
       return '#0000ff'; // Azul oscuro para clima frío
-    } else if (ClimaAPI.current_weather.temperature <= 17) {
+    } else if (tempColor > 5 && tempColor <= 16) {
       return '#e0ffff'; // Celeste para clima fresco
-    } else if (ClimaAPI.current_weather.temperature <= 23) {
-      return '#90ee90'; // Verde para clima ideal
-    } else if (ClimaAPI.current_weather.temperature <= 30) {
-      return '#ffffe0'; // Amarillo para clima levemente cálido
+    } else if (tempColor > 16 && tempColor <= 21) {
+      return '#90ee90'; // Verde claro para clima agradable fresco
+    } else if (tempColor > 21 && tempColor <= 25) {
+      return '#2bd22b'; // Verde oscuro para clima agradable calido
+    } else if (tempColor > 25 && tempColor <= 29) {
+      return '#ffffe0'; // Amarillo para clima cálido
+    } else if (tempColor > 29 && tempColor <= 35) {
+      return '#ff4c4c'; // Rojo para clima caliente      
     } else {
-      return '#ff4c4c'; // Rojo para clima muy caliente
+      return '#8d138d'; // Morado para clima muy caliente, peligroso.
     }
   };
-  
-  // Temperatura máxima (debe obtenerse de tus datos)
-  const tempMax = "Temperatura Máxima: "
-  const contTempMax = ClimaAPI.daily.temperature_2m_max + ClimaAPI.daily_units.temperature_2m_max; // Cambia este valor según tus datos reales
+
+  let TempMax = datosClima.daily.temperature_2m_max
 
   // Temperatura mínima (debe obtenerse de tus datos)
-  const tempMin = "Temperatura Mínima: "
-  const contTempMin = ClimaAPI.daily.temperature_2m_min + ClimaAPI.daily_units.temperature_2m_min; // Cambia este valor según tus datos reales
+  const tempMin = datosClima.daily.temperature_2m_min;
 
   // Estado del clima
   const estadoClima = 'Estado de Clima: ';
-  const contEstadoClima = ClimaAPI.current_weather.weathercode // Cambia esto según tu lógica de clima
+  const contEstadoClima = datosClima.current_weather.weathercode
   const IconoEstadoClima = CodigoClima[contEstadoClima].icons
   const NombreEstadoClima = CodigoClima[contEstadoClima].name
 
 
-const CaF= ((ClimaAPI.current_weather.temperature * 9/5)+32)
+  const CaF = (gradosCelsius) => {
+    const gradosFahrenheit = (gradosCelsius * 9 / 5) + 32;
+    return gradosFahrenheit;
+  };
 
 
+  if (loading) {
+    return (
+      <ContenedorTemp>
+        <SectorArriba>
+          <h2>Cargando</h2>
+        </SectorArriba>
+      </ContenedorTemp>
+    )
+  } else {
+
+    return (
+      <ContenedorTemp>
+        {console.log(datosClima.current_weather.temperature)}
+        {console.log(datosClima.current_weather.temperature)}
 
 
-  return (
-    <ContenedorTemp>
-      
-      <SectorArriba>
+        <SectorArriba>
+          {/* 
+          <TarjetaEstatica
+            titulo={"Temperatura Actual : " + datosClima.current_weather.temperature + datosClima.hourly_units.temperature_2m}
+            contenido={"Temperatura Actual en °F: " + CaF + "°F"}
+            imagen={TemperaturaImg}
+          /> */}
 
-      <TarjetaEstatica
-        titulo={"Temperatura Actual : " + ClimaAPI.current_weather.temperature + ClimaAPI.hourly_units.temperature_2m}
-        contenido={"Temperatura Actual en °F: " + CaF + "°F"}
-        imagen={TemperaturaImg}
-      />
+          <TarjetaReversible
+            imagenFrente={EstadoClimaImg}
+            tituloFrente={estadoClima}
+            contenidoFrente=""
+            imagenDorso={IconoEstadoClima}
+            tituloDorso={NombreEstadoClima}
+            contenidoDorso={""}
+            colorFondoContenido={""} // Calcula el color de fondo
+          />
 
-        <TarjetaReversible
-        imagenFrente={EstadoClimaImg}
-          tituloFrente={estadoClima}
-          contenidoFrente=""
-          imagenDorso={IconoEstadoClima}
-          tituloDorso={NombreEstadoClima}
-          contenidoDorso={""}
-          colorFondoContenido={calcularColorFondo()} // Calcula el color de fondo
-        />
+          <TarjetaReversible
+            imagenFrente={TemperaturaImg}
+            tituloFrente={"Temperatura Actual : " + datosClima.current_weather.temperature + datosClima.hourly_units.temperature_2m}
+            contenidoFrente={"Temperatura Actual en °F: " + CaF(datosClima.current_weather.temperature) + "°F"}
+            imagenDorso={TemperaturaImg}
+            tituloDorso={"Temperatura Actual : " + datosClima.current_weather.temperature + datosClima.hourly_units.temperature_2m}
+            contenidoDorso={"Temperatura Actual en °F: " + CaF(datosClima.current_weather.temperature) + "°F"}
+            colorFondoContenido={calcularColorFondo(datosClima.current_weather.temperature)} // Calcula el color de fondo
+          />
 
-        <TarjetaReversible
-        imagenFrente={TemperaturaMaxImg}
-          tituloFrente={tempMax}
-          contenidoFrente=""
-          imagenDorso={TemperaturaMaxImg}
-          tituloDorso={contTempMax}
-          contenidoDorso=""
-          colorFondoContenido={calcularColorFondo(contTempMax)} // Calcula el color de fondo
-        />
+          <TarjetaReversible
+            imagenFrente={TemperaturaMaxImg}
+            tituloFrente={"Temperatura Máxima del día"}
+            contenidoFrente=""
+            imagenDorso={TemperaturaMaxImg}
+            tituloDorso={TempMax + " °C"}
+            contenidoDorso={"Temperatura Máxima en °F: " + CaF(TempMax) + "°F"}
+            colorFondoContenido={calcularColorFondo(TempMax)} // Calcula el color de fondo
+          />
 
-        <TarjetaReversible
-        imagenFrente={TemperaturaMinImg}
-          tituloFrente={tempMin}
-          contenidoFrente=""
-          imagenDorso={TemperaturaMinImg}
-          tituloDorso={contTempMin}
-          contenidoDorso=""
-          colorFondoContenido={calcularColorFondo(contTempMin)} // Calcula el color de fondo
-        />
-      </SectorArriba>
-            
-      <SectorAbajo>
-        <ContendorGraficos>
-          <p>Gráfico de temperatura a lo largo del día</p>
-          <LineChart width={900} height={200} data={datosTemperaturaHoy}>
-            <XAxis dataKey="hora" />
-            <YAxis dataKey="temperatura" />
-            <CartesianGrid strokeDasharray="3 3" />
-            <Tooltip />
-            <Line type="monotone" dataKey="temperatura" stroke="#000000" />
-          </LineChart>
-        </ContendorGraficos>
-      </SectorAbajo>
-    </ContenedorTemp>
-  );
+          <TarjetaReversible
+            imagenFrente={TemperaturaMinImg}
+            tituloFrente={"Temperatura Mínima del día"}
+            contenidoFrente=""
+            imagenDorso={TemperaturaMinImg}
+            tituloDorso={tempMin + " °C"}
+            contenidoDorso={"Temperatura Mínima en °F: " + CaF(tempMin) + "°F"}
+            colorFondoContenido={calcularColorFondo(tempMin)} // Calcula el color de fondo
+          />
+
+        </SectorArriba>
+
+        <SectorAbajo>
+          <ContendorGraficos>
+            <p>Gráfico de temperatura a lo largo del día</p>
+            <LineChart width={900} height={200} data={datosTemperaturaHoy}>
+              <XAxis dataKey="hora" />
+              <YAxis dataKey="temperatura" />
+              <CartesianGrid strokeDasharray="3 3" />
+              <Tooltip />
+              <Line type="monotone" dataKey="temperatura" stroke="#000000" />
+            </LineChart>
+          </ContendorGraficos>
+        </SectorAbajo>
+      </ContenedorTemp>
+    );
+  }
 }
-
 export default Temperatura;

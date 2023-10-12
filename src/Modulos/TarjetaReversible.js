@@ -30,7 +30,6 @@ const Frente = styled.div`
   transform: rotateY(0deg);
   transition: transform 0.5s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
   background-color: #f6fff8; /* Fondo del lado frontal */
 
   & img {
@@ -62,8 +61,7 @@ const Dorso = styled.div`
   transform: rotateY(180deg);
   transition: transform 0.5s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-
-  background-color: #eaf4f4; /* Fondo del lado trasero */
+  background-color: ${(props) => props.colorFondoContenido || '#eaf4f4'}; /* Usar la prop colorFondoContenido o el color predeterminado */
 
   & img {
     height: 55%;
