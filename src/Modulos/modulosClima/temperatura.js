@@ -54,8 +54,8 @@ const ContendorGraficos = styled.div`
 `;
 
 function Temperatura({ datosClima, loading }) {
-  // Datos para el gráfico
 
+  // Datos para el gráfico
   const datosTemperaturaHoy = datosClima.hourly.time.map((hora, index) => ({
     hora: String(hora).slice(-5),
     temperatura: datosClima.hourly.temperature_2m[index],

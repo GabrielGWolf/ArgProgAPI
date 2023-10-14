@@ -20,6 +20,7 @@ display: grid;
 grid-template-columns: repeat(4, 1fr);
 grid-template-rows: repeat(1, 1fr); 
 gap: 5px; 
+
 `;
 
 function Highlights({ datosClima, loading }) {

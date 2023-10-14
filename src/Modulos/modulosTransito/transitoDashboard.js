@@ -1,5 +1,3 @@
-
-
 function transitoDashboard(){
     return (
       <div className="transito">
