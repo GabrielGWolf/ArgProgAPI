@@ -10,15 +10,12 @@ const TarjetaContainer = styled.div`
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  position: relative;
-  perspective: 1000px;
+  position: relative; 
   transform: rotateX(2deg);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  background-color: #cce3de; /* Fondo principal de la tarjeta */
 `;
 
 const Frente = styled.div`
-  color: black;
+  color: #2F3E46;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +27,7 @@ const Frente = styled.div`
   transform: rotateY(0deg);
   transition: transform 0.5s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  background-color: #f6fff8; /* Fondo del lado frontal */
+  background-color: #EAF4F4; /* Fondo del lado frontal */
 
   & img {
     height: 55%;
@@ -48,6 +45,7 @@ const Frente = styled.div`
 
 const Dorso = styled.div`
   display: flex;
+  color: #2F3E46;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -61,7 +59,7 @@ const Dorso = styled.div`
   transform: rotateY(180deg);
   transition: transform 0.5s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  background-color: ${(props) => props.colorFondoContenido || '#eaf4f4'}; /* Usar la prop colorFondoContenido o el color predeterminado */
+  background-color: ${(props) => props.colorFondoContenido || '#CCE3DE'}; /* Usar la prop colorFondoContenido o el color predeterminado */
 
   & img {
     height: 55%;

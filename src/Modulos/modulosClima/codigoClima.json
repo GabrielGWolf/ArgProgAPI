@@ -1,6 +1,6 @@
 {
     "0" : {
-        "name": "despejado",
+        "name": "Despejado",
         "icons": "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/clear-day.svg"
     },
     "1" : {
@@ -76,11 +76,11 @@
         "icons": "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/extreme-snow.svg"
     },    
     "77" : {
-        "name": "aguanieve",
+        "name": "Aguanieve",
         "icons": "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/snow.svg"
     },
     "80" : {
-        "name": "tormenta ligera",
+        "name": "Tormenta ligera",
         "icons": "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/thunderstorms-rain.svg"
     },
     "81" : {
@@ -92,11 +92,11 @@
         "icons": "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/thunderstorms-extreme-rain.svg"
     },
     "85" : {
-        "name": "tormenta de nieve, moderada",
+        "name": "Tormenta de nieve, moderada",
         "icons": "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/thunderstorms-overcast-snow.svg"
     },
     "86" : {
-        "name": "tormenta de nieve, fuerte",
+        "name": "Tormenta de nieve, fuerte",
         "icons": "https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/thunderstorms-extreme-snow.svg"
     },
     "95" : {

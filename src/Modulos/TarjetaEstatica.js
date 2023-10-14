@@ -9,7 +9,7 @@ const TarjetaSContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: #f6fff8; /* Color de fondo de la tarjeta */
+  background-color: #EAF4F4; /* Color de fondo de la tarjeta */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombreado para dar profundidad */
   transition: background-color 0.3s ease;
 
@@ -19,7 +19,7 @@ const TarjetaSContainer = styled.div`
   }
 
   &:hover {
-    background-color: #cce3de; /* Cambia el color de fondo en hover */
+    background-color: #CAD2C5; /* Cambia el color de fondo en hover */
   }
 `;
 

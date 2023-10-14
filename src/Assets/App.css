@@ -1,32 +1,27 @@
-body {
-  background-color: #EAF4F4;
-  text-align: center;
-  margin: 0.5vh 0.5vw;
-  padding: 0.5vh 0.5vw;
+.coloresEnHex {
+  color: #2bd22b;
+  color: #d6d612;
+  color: #d89820;
+  color: #d54242;
+  color: #8d138d;
+  color: #0000ff;
+  color: #e0ffff;
+  color: #90ee90;
+  color: #00008b
 }
 
-.dia {
-  max-height: 10vh;
-  /* El máximo del 10% de la altura de la pantalla */
-  min-height: 10vh;
-  /* El mínimo del 10% de la altura de la pantalla */
-  white-space: nowrap;
-  /* Evita el salto de línea */
-  overflow: hidden;
-  /* Oculta cualquier contenido que desborde */
-  text-overflow: ellipsis;
-  /* Muestra puntos suspensivos (...) si el contenido desborda */
-  overflow: auto;
+.paleta1Claro {
+  color: #6B9080;
+  color: #A4C3B2;
+  color: #CCE3DE;
+  color: #EAF4F4;
+  color: #F6FFF8;
 }
 
-.clima {
-  flex: 1; /* Ocupa el 50% del espacio disponible */
-  padding: 10px; /* Añade espacio de relleno si es necesario */
-}
-
-.transito {
-  flex: 1; /* Ocupa el 50% del espacio disponible */
-  padding: 10px; /* Añade espacio de relleno si es necesario */
-  border: solid red;
-}
-
+.paleta2Oscuro {
+    color: #2F3E46;
+    color: #354F52;
+    color: #52796F;
+    color: #84A98C;
+    color: #CAD2C5;
+  }
