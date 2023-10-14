@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/ArgProgAPI/static/css/main.78d35bd9.css",
-    "main.js": "/ArgProgAPI/static/js/main.f289d33e.js",
+    "main.css": "/ArgProgAPI/static/css/main.21e271cd.css",
+    "main.js": "/ArgProgAPI/static/js/main.1f2681ac.js",
     "static/js/787.46c2b972.chunk.js": "/ArgProgAPI/static/js/787.46c2b972.chunk.js",
     "static/media/rainbow-clear.svg": "/ArgProgAPI/static/media/rainbow-clear.9446e323df8567b1ec0c575247d62681.svg",
     "static/media/starry-night.svg": "/ArgProgAPI/static/media/starry-night.509aeabb26c7a8f18dc5b88986e22b67.svg",
+    "static/media/rain.svg": "/ArgProgAPI/static/media/rain.6f43169e2db3a96adc41053a0bbb9146.svg",
     "static/media/windsock.svg": "/ArgProgAPI/static/media/windsock.d9375c49d9a7e66ed9655832f1ac3cde.svg",
     "static/media/thermometer-celsius.svg": "/ArgProgAPI/static/media/thermometer-celsius.1831b1d8c56c1573f170fa4067b73438.svg",
     "static/media/thermometer-warmer.svg": "/ArgProgAPI/static/media/thermometer-warmer.5f9dfc8ccdb911dfa0fe592996330abb.svg",
@@ -12,18 +13,17 @@
     "static/media/thermometer-colder.svg": "/ArgProgAPI/static/media/thermometer-colder.88b91af5f3ec11036126a092ea0d0365.svg",
     "static/media/humidity.svg": "/ArgProgAPI/static/media/humidity.f6f97c5f6b692e20bbb132d27e5fa8e1.svg",
     "static/media/mist.svg": "/ArgProgAPI/static/media/mist.e61faee5b9692f9897af7717913dd7e3.svg",
+    "static/media/moonrise.svg": "/ArgProgAPI/static/media/moonrise.cde04f73e82fd6667b1333e4bbabe5e0.svg",
     "static/media/sunrise.svg": "/ArgProgAPI/static/media/sunrise.749e354e586c2010362b8570d5c3f33e.svg",
-    "static/media/sunset.svg": "/ArgProgAPI/static/media/sunset.89562883e8691c69a12f126cad1d76d5.svg",
     "static/media/wind.svg": "/ArgProgAPI/static/media/wind.7666ea56edeecb3eff022542f7995c2d.svg",
     "static/media/horizon.svg": "/ArgProgAPI/static/media/horizon.a471d7d512916708b4b5a13bc9d95044.svg",
-    "static/media/barometer.svg": "/ArgProgAPI/static/media/barometer.8b6e33cb1de88118509b26e7a8860a5d.svg",
     "index.html": "/ArgProgAPI/index.html",
-    "main.78d35bd9.css.map": "/ArgProgAPI/static/css/main.78d35bd9.css.map",
-    "main.f289d33e.js.map": "/ArgProgAPI/static/js/main.f289d33e.js.map",
+    "main.21e271cd.css.map": "/ArgProgAPI/static/css/main.21e271cd.css.map",
+    "main.1f2681ac.js.map": "/ArgProgAPI/static/js/main.1f2681ac.js.map",
     "787.46c2b972.chunk.js.map": "/ArgProgAPI/static/js/787.46c2b972.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78d35bd9.css",
-    "static/js/main.f289d33e.js"
+    "static/css/main.21e271cd.css",
+    "static/js/main.1f2681ac.js"
   ]
 }
