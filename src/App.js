@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import ClimaDashboard from './Modulos/modulosClima/climaDashboard';
 import TransitoDashboard from './Modulos/modulosTransito/transitoDashboard';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import './Assets/App.css'
 
 
