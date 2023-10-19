@@ -15,20 +15,25 @@ function TransitoDashboard() {
 
   const apiUrl = "https://apitransporte.buenosaires.gob.ar/colectivos/vehiclePositionsSimple?client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6"
   useEffect(() => {
-    setLoading(true);
-    fetch(apiUrl)
-      .then((resp) => resp.json())
-      .then((data) => {
-        setTransportData(data);
-        setLoading(false);
-      })
-      .catch((ex) => {
-        console.error(ex);
-      });
+    const interval = setInterval(() => {
+      setLoading(true);
+      fetch(apiUrl)
+        .then((resp) => resp.json())
+        .then((data) => {
+          setTransportData(data);
+          setLoading(false);
+        })
+        .catch((ex) => {
+          console.error(ex);
+        });
+    }, 31000);
+    return () => clearInterval(interval);
   }, []);
 
 
-  if (!loading) {
+
+
+  if (loading) {
     return (
       <ContenedorGral>
         <h2>Cargando</h2>
@@ -37,7 +42,7 @@ function TransitoDashboard() {
   } else {
     return (
       <ContenedorGral>
-        {{/* !loading */} && <Mapa transportData={transportData} loading={loading} />}
+        {!loading && <Mapa transportData={transportData} loading={loading} />}
       </ContenedorGral>
     )
   }

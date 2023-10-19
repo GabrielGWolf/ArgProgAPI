@@ -37,7 +37,7 @@ function App() {
         Cambiar Color
       </button>
       <Clima >
-        <ClimaDashboard darkMode={darkMode}/>
+        {/* <ClimaDashboard darkMode={darkMode}/> */}
       </Clima>
       <Transito>
         <TransitoDashboard darkMode={darkMode}/>

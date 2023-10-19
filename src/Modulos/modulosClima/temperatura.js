@@ -10,7 +10,7 @@ import TemperaturaMaxImg from '../../Assets/iconos/thermometer-warmer.svg'
 import TemperaturaMinImg from '../../Assets/iconos/thermometer-colder.svg'
 import EstadoClimaImg from '../../Assets/iconos/rainbow-clear.svg'
 /* JSON */
-import CodigoClima from './codigoClima.json'
+import CodigoClima from '../../Data/codigoClima.json'
 
 /* import ClimaAPI from './climaAPI.json' */
 
