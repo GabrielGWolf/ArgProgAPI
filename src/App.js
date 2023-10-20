@@ -7,8 +7,8 @@ import './Assets/App.css'
 
 
 const ContenedorApp = styled.div`
-  background-color: ${props => (props.darkMode ? '#F6FFF8' : '#354F52')};
-  color: ${props => (props.darkMode ? '#6B9080' : '#CAD2C5')};
+  background-color: ${props => (props.darkMode ? '#354F52' : '#F6FFF8')};
+  color: ${props => (props.darkMode ? '#CAD2C5' : '#6B9080')};
   text-align: center;
   margin: 0.1vh 0.1vw;
   padding: 0.1vh 0.1vw;
@@ -20,7 +20,6 @@ flex: 1; /* Ocupa el 50% del espacio disponible */
 const Transito = styled.div`
   flex: 1; /* Ocupa el 50% del espacio disponible */
   padding: 10px; /* Añade espacio de relleno si es necesario */
-  border: solid #0000ff;
 `
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
         Cambiar Color
       </button>
       <Clima >
-        {/* <ClimaDashboard darkMode={darkMode}/> */}
+        <ClimaDashboard darkMode={darkMode}/>
       </Clima>
       <Transito>
         <TransitoDashboard darkMode={darkMode}/>

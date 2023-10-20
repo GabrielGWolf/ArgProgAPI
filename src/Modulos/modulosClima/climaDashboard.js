@@ -3,6 +3,7 @@ import Highlights from './highlights';
 import Temperatura from './temperatura';
 import styled from 'styled-components';
 import Dia from './dia'
+import { PacmanLoader } from 'react-spinners'; // Importa BarLoader desde react-spinners
 
 const ContenedorGral = styled.div`
   display: grid;
@@ -48,7 +49,14 @@ function ClimaDashboard() {
   if (loading) {
     return (
       <ContenedorClima>
-        <h2>Cargando</h2>
+       <div style={{display:"flex", justifyContent:"center"}}>
+        <PacmanLoader
+          color="#36bed6"
+          margin={5}
+          size={70}
+          speedMultiplier={2}
+        />
+        </div>
       </ContenedorClima>
     )
   } else {

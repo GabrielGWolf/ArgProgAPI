@@ -1,7 +1,10 @@
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet'
-import styled from 'styled-components';
-import Transp from '../../Data/transp.json'
 import L from 'leaflet';
+
+import styled from 'styled-components';
+//JSON Estático para probar 
+/* import Transp from '../../Data/transp.json' */
+
 
 // iconos personalizados: 
 const customIcon153 = new L.Icon({
@@ -32,27 +35,22 @@ const customIcon148 = new L.Icon({
 
 function Mapa({ loading, transportData }) {
 
-  // Para buscar casos que contengan "153" en route_short_name
-  const linea153 = Transp.filter((obj) => /153/.test(obj.route_short_name));
-  const linea321 = Transp.filter((obj) => /321/.test(obj.route_short_name));
-  const linea159 = Transp.filter((obj) => /159/.test(obj.route_short_name));
-  const linea148 = Transp.filter((obj) => /148/.test(obj.route_short_name));
+// Para buscar casos que contengan "153" en route_short_name
+  const linea153 = !loading? transportData.filter((obj) => /153/.test(obj.route_short_name)) : [];
+  const linea321 = !loading? transportData.filter((obj) => /321/.test(obj.route_short_name)): [];
+  const linea159 = !loading? transportData.filter((obj) => /159/.test(obj.route_short_name)): [];
+  const linea148 = !loading? transportData.filter((obj) => /148/.test(obj.route_short_name)): [];
 
-  // Combinar todas las lineas en una sola lista para poder mostar todas en el mapa al mismo tiempo
-  const lineasCombinadas = [...linea153, ...linea321, ...linea159, ...linea148];
 
-  /*   console.log(linea153A)
-    console.log(linea321A)
-    console.log(linea159)
-    console.log(lineasCombinadas)
+  /*   // Combinar todas las lineas en una sola lista para poder mostar todas en el mapa al mismo tiempo
+    const lineasCombinadas = [...linea153, ...linea321, ...linea159, ...linea148];
    */
 
   return (
-
-
+    
     <>
       <h1>Colectivos de la Ciudad de Buenos Aires</h1>
-      <MapContainer center={[lineasCombinadas[0].latitude, lineasCombinadas[0].longitude]} zoom={10} style={{ height: '400px', width: '100%' }}>
+      <MapContainer center={[-34.71995, -58.25524]} zoom={10} style={{ height: '400px', width: '100%' }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -62,11 +60,11 @@ function Mapa({ loading, transportData }) {
           return (
             <Marker key={index} position={position} icon={customIcon153}>
               <Popup>
-                <p>Linea: {item.route_short_name}</p>
-                <p>Dirección de la Ruta: {item.trip_headsign}</p>
-                <p>Velocidad Actual: {item.speed}</p>
-                <p>Nombre de la Empresa: {item.agency_name}. Cod. Empresa: {item.agency_id}</p>
-                <p>ID de la Ruta: {item.route_id}</p>
+                <span>Linea: {item.route_short_name}</span><br />
+                <span>Dirección de la Ruta: {item.trip_headsign}</span><br />
+                <span>Velocidad Actual: {item.speed}</span><br />
+                <span>Nombre de la Empresa: {item.agency_name}. Cod. Empresa: {item.agency_id}</span><br />
+                <span>ID de la Ruta: {item.route_id}</span><br />
               </Popup>
             </Marker>
           );
@@ -76,11 +74,11 @@ function Mapa({ loading, transportData }) {
           return (
             <Marker key={index} position={position} icon={customIcon321}>
               <Popup>
-                <p>Linea: {item.route_short_name}</p>
-                <p>Dirección de la Ruta: {item.trip_headsign}</p>
-                <p>Velocidad Actual: {item.speed}</p>
-                <p>Nombre de la Empresa: {item.agency_name}. Cod. Empresa: {item.agency_id}</p>
-                <p>ID de la Ruta: {item.route_id}</p>
+                <span>Linea: {item.route_short_name}</span><br />
+                <span>Dirección de la Ruta: {item.trip_headsign}</span><br />
+                <span>Velocidad Actual: {item.speed}</span><br />
+                <span>Nombre de la Empresa: {item.agency_name}. Cod. Empresa: {item.agency_id}</span><br />
+                <span>ID de la Ruta: {item.route_id}</span><br />
               </Popup>
             </Marker>
           );
@@ -90,11 +88,11 @@ function Mapa({ loading, transportData }) {
           return (
             <Marker key={index} position={position} icon={customIcon159}>
               <Popup>
-                <p>Linea: {item.route_short_name}</p>
-                <p>Dirección de la Ruta: {item.trip_headsign}</p>
-                <p>Velocidad Actual: {item.speed}</p>
-                <p>Nombre de la Empresa: {item.agency_name}. Cod. Empresa: {item.agency_id}</p>
-                <p>ID de la Ruta: {item.route_id}</p>
+                <span>Linea: {item.route_short_name}</span><br />
+                <span>Dirección de la Ruta: {item.trip_headsign}</span><br />
+                <span>Velocidad Actual: {item.speed}</span><br />
+                <span>Nombre de la Empresa: {item.agency_name}. Cod. Empresa: {item.agency_id}</span><br />
+                <span>ID de la Ruta: {item.route_id}</span><br />
               </Popup>
             </Marker>
           );
@@ -104,11 +102,11 @@ function Mapa({ loading, transportData }) {
           return (
             <Marker key={index} position={position} icon={customIcon148}>
               <Popup>
-                <p>Linea: {item.route_short_name}</p>
-                <p>Dirección de la Ruta: {item.trip_headsign}</p>
-                <p>Velocidad Actual: {item.speed}</p>
-                <p>Nombre de la Empresa: {item.agency_name}. Cod. Empresa: {item.agency_id}</p>
-                <p>ID de la Ruta: {item.route_id}</p>
+                <span>Linea: {item.route_short_name}</span><br />
+                <span>Dirección de la Ruta: {item.trip_headsign}</span><br />
+                <span>Velocidad Actual: {item.speed}</span><br />
+                <span>Nombre de la Empresa: {item.agency_name}. Cod. Empresa: {item.agency_id}</span><br />
+                <span>ID de la Ruta: {item.route_id}</span><br />
               </Popup>
             </Marker>
           );
