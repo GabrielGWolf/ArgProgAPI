@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ArgProgAPI/static/css/main.f7fd9e07.css",
-    "main.js": "/ArgProgAPI/static/js/main.dd9f4f23.js",
+    "main.js": "/ArgProgAPI/static/js/main.f078580c.js",
     "static/media/rainbow-clear.svg": "/ArgProgAPI/static/media/rainbow-clear.9446e323df8567b1ec0c575247d62681.svg",
     "static/media/starry-night.svg": "/ArgProgAPI/static/media/starry-night.509aeabb26c7a8f18dc5b88986e22b67.svg",
     "static/media/rain.svg": "/ArgProgAPI/static/media/rain.6f43169e2db3a96adc41053a0bbb9146.svg",
@@ -18,10 +18,10 @@
     "static/media/wind.svg": "/ArgProgAPI/static/media/wind.7666ea56edeecb3eff022542f7995c2d.svg",
     "static/media/horizon.svg": "/ArgProgAPI/static/media/horizon.a471d7d512916708b4b5a13bc9d95044.svg",
     "main.f7fd9e07.css.map": "/ArgProgAPI/static/css/main.f7fd9e07.css.map",
-    "main.dd9f4f23.js.map": "/ArgProgAPI/static/js/main.dd9f4f23.js.map"
+    "main.f078580c.js.map": "/ArgProgAPI/static/js/main.f078580c.js.map"
   },
   "entrypoints": [
     "static/css/main.f7fd9e07.css",
-    "static/js/main.dd9f4f23.js"
+    "static/js/main.f078580c.js"
   ]
 }
