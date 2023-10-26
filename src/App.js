@@ -10,8 +10,8 @@ const ContenedorApp = styled.div`
   background-color: ${props => (props.darkMode ? '#354F52' : '#F6FFF8')};
   color: ${props => (props.darkMode ? '#CAD2C5' : '#6B9080')};
   text-align: center;
-  margin: 0.1vh 0.1vw;
-  padding: 0.1vh 0.1vw;
+  margin: 0.01vh 0.01vw;
+  padding: 0.01vh 0.01vw;
   `
 const Clima = styled.div`
 flex: 1; /* Ocupa el 50% del espacio disponible */

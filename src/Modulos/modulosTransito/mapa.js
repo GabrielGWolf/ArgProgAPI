@@ -28,39 +28,15 @@ function CustomMarker({ data, iconUrl }) {
 
 function Mapa({ loading, transportData }) {
     const [selectedLine, setSelectedLine] = useState(''); // Estado para la línea seleccionada
-    const filteredData = !loading ? TranspJson : [];
+    const filteredData = !loading ? transportData : [];
 
     const filteredDataByLine = filteredData.filter((item) => {
         const routeName = item.route_short_name.match(/\d+/);
         return selectedLine === '' || routeName.toString() === selectedLine;
-    });
-
-    const numLineaConDuplicados = filteredData.map((item) => {
-        const routeName = item.route_short_name.match(/\d+/);
-        return routeName[0]
-    });
-
-    const numLinea = numLineaConDuplicados.reduce((unicos, elemento) => {
-        if (!unicos.includes(elemento)) {
-            unicos.push(elemento);
-        }
-        return unicos;
-    }, []);
+    }); 
 
     return (
         <>
-            <h1>Colectivos de la Ciudad de Buenos Aires</h1>
-
-            {/* Desplegable para seleccionar una línea */}
-            <select value={selectedLine} onChange={(e) => setSelectedLine(e.target.value)}>
-                <option value="">Todas las lineas disponibles</option>
-                {numLinea.map((line) => (
-                    <option key={line} value={line}>
-                        Línea {line}
-                    </option>
-                ))}
-            </select>
-
             <MapContainer center={[-34.71995, -58.25524]} zoom={10} style={{ height: '400px', width: '100%' }}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

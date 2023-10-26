@@ -1,16 +1,25 @@
-# Dashboard con API - v00
+# Dashboard con API - v 02
 
 El objetivo del proyecto es poder crear un dashboard de pantalla dividida en dos secciones. Una sección Clima (que se definio que ocupe la parte superior de la pantalla), y una sección Tránsito, que aún no tiene desarrollo pero se desarrollará a futuro.
 El objetivo principal es poder utilizar información brindada por una API para actualizar información que se muestra en nuestra página.
 
 ## CSS y Styled-Components
+#### V 02:
+Sin cambios
+#### V 01:
+Ya se corrigió todo para que use Styled-components. Ya no es necesario el archivo .css pero se mantiene para consulta de las paletas de colores y otras funciones.
 
-V 00 = Primero programe utilizando un solo CSS general
+#### V 00: 
+Primero programe utilizando un solo CSS general
 En segunda instancia note la posibilidad de mejorar la modularizacion, por lo que opte por agregar styled components, mejorar la modularizacion a modulos mas pequeños y dividir la tarea en partes pequeñas y mas manejables.
 Quedan alunos puntos definidos en el CSS general que a futuro deben ser corregidas para que utilicen Styled-Components. 
-v 01 = Ya se corrigió todo para que use Styled-components. Ya no es necesario el archivo .css pero se mantiene para consulta de las paletas de colores y otras funciones.
+
 
 ## Elecciones de Diseño
+#### v02: 
+ - se mantiene la misma decisión de colores y tamaños. 
+
+Aún estoy intentando que todo pueda mostrarse en una sola pantalla
 
 #### V 01:
  - Debido a la forma de tarbajo con la API, decidí incluir el modulo de Dia dentro de los modulos del dashboard clima, por lo que la pantalla ya no se divide en 3 sino en 2, y dentro del Dashboard clima cambia se agrega la seccion de día
@@ -44,6 +53,15 @@ pero planeo cambiar los colores nuevamente.
 
 
 ## Contenido:
+
+#### v 02: 
+ - Se agregó el módulo de transporte, que se conecta con su API, pero al dar errores la API, se optó por conectarlo con un JSON estático de forma tal que se puedan mostrar los datos correspondientes
+ - Se trabajó en el módulo transporte primero para mostrar siempre el mapa, ya que al principio se volvia a renderizar completo cada 31 segundos, con cada pedido a la API. Esto pudo corregirse pasando la propiedad loading a cada sector donde fuera necesario.
+ - Se mejoró en la clase del sábado 21/10, en conjunto con los profesores, el módulo "mapa" para que pueda mapear automaticamente las lineas de colectivo y traer los íconos desde la pagina https://www.xcolectivo.com.ar/
+ - cabe aclarar que la API no está funcioando correctamente a la fecha, por lo que se utiliza el JSON tomado de la misma, por lo menos hasta corroborar que la misma funcione.
+
+ API: https://apitransporte.buenosaires.gob.ar/colectivos/vehiclePositionsSimple?client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6
+ Íconos: https://www.xcolectivo.com.ar/imagenes/colectivos/identificador/linea${route_id}.jpg
 
 #### V 01: 
  - Ya se conecta todo con la API y trae los datos como corresponden. Se mantiene el archivo JSON para consulta de las categorías y pruebas que puedan provocar errores (básicamente para poder hacer Debug)
@@ -120,7 +138,6 @@ Les dejo como ejemplo una tarjeta en uso en mi código.
           tituloDorso={ClimaAPI.current_weather.temperature + ClimaAPI.hourly_units.temperature_2m}
           contenidoDorso={CaF + "Farenheit"}
           />
-
 
 ---------
 ### Tarjeta Estatica
