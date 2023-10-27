@@ -3,9 +3,9 @@ import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import TranspJson from '../../Data/transp.json';
 
-const routeIconsF = (route_id) => {
+const routeIconsF = (numLinea) => {
     return (
-        `https://www.xcolectivo.com.ar/imagenes/colectivos/identificador/linea${route_id}.jpg`
+        `https://www.xcolectivo.com.ar/imagenes/colectivos/identificador/linea${numLinea}.jpg`
     )
 }
 
@@ -37,7 +37,7 @@ function Mapa({ loading, transportData }) {
 
     return (
         <>
-            <MapContainer center={[-34.71995, -58.25524]} zoom={10} style={{ height: '400px', width: '100%' }}>
+            <MapContainer center={[-34.60376,  -58.38162]} zoom={10.5} style={{ height: '400px', width: '100%' }}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
