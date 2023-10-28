@@ -33,11 +33,11 @@ function Mapa({ loading, transportData }) {
     const filteredDataByLine = filteredData.filter((item) => {
         const routeName = item.route_short_name.match(/\d+/);
         return selectedLine === '' || routeName.toString() === selectedLine;
-    }); 
+    });
 
     return (
         <>
-            <MapContainer center={[-34.60376,  -58.38162]} zoom={10.5} style={{ height: '400px', width: '100%' }}>
+            <MapContainer center={[-34.60376, -58.38162]} zoom={9.5} style={{ height: '400px', width: '100%' }}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Mapa from './mapa'
-import RouteJSON from "../../Data/routeID.json"
 import Conversion from '../../Data/conversion.json'
 
 const ContenedorGral = styled.div`
