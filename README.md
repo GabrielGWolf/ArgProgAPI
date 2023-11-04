@@ -1,11 +1,15 @@
-# Dashboard con API - v 02
+# Dashboard con API - v 03
 
 El objetivo del proyecto es poder crear un dashboard de pantalla dividida en dos secciones. Una sección Clima (que se definio que ocupe la parte superior de la pantalla), y una sección Tránsito, que aún no tiene desarrollo pero se desarrollará a futuro.
 El objetivo principal es poder utilizar información brindada por una API para actualizar información que se muestra en nuestra página.
 
 ## CSS y Styled-Components
+#### v 03: 
+Todo configurado con Styled Components. Se eliminan los archivos css innecesarios y se deja solamente un css que utilicé de refencia para poder probar la paleta de colores. 
+
 #### V 02:
 Sin cambios
+
 #### V 01:
 Ya se corrigió todo para que use Styled-components. Ya no es necesario el archivo .css pero se mantiene para consulta de las paletas de colores y otras funciones.
 
@@ -16,7 +20,11 @@ Quedan alunos puntos definidos en el CSS general que a futuro deben ser corregid
 
 
 ## Elecciones de Diseño
-#### v02: 
+#### V 03: 
+- se cambiaron todos los iconos de llamadas a iconos locales a llamadas a los iconos que se encuentran online en meteocons.
+- se cambiaron algunos de los iconos (eleccion de que imagen usar y donde usarlas). 
+
+#### V 02: 
  - se mantiene la misma decisión de colores y tamaños. 
  - El módulo referente al Mapa no se adapta bien a los tamaños, no es todo lo responsibe que me gustaría. 
  
@@ -55,6 +63,13 @@ pero planeo cambiar los colores nuevamente.
 
 ## Contenido:
 
+#### v 03: 
+ - se trabajo en limpieza del codigo y en limpieza de los componentes. Se eliminó la carpeta "iconos" de "Assets" porque ya no era necesario tener ninguno de ellos de forma local.
+ - se crea una funcion para acomodar la fecha
+ - se agregó una forma de elegir la ciudad del mundo de donde se quieren ver los datos de clima
+ - con la ayuda del profesor Guido usamos un contexto para poder pasar una info de un componente "nieto" hacia "arriba" y poder cambiar el color de la pagina de acuerdo a si es de día o de noche en la ciudad buscada 
+ - Me hubiera gustado lograr que la hora cambie segun el lugar del mundo donde se posiciona el usuario, pero por la forma en la que la API selecciona y trae los datos, requería la instalación de otra biblioteca o de muchas funciones para descubrir su huso horario y poder acomodarlo, y me acobarde para hacerlo :D
+
 #### v 02: 
 ##### 21/10/23
 
@@ -92,6 +107,10 @@ Probé con una forma de "map" que me permitía ver y seleccionar cualquier linea
 
 
 ## Extras: 
+
+#### v03:
+  - se modificó la forma en la que se muestran los datos dentro de las tarjetas, cambiando <p></p> por <span></span><br />
+  - me hubiera gustado mejorar un poco mas la cuestión de idioma en el código y la programación, dejando todo en inglés o en castellano, pero me enrede con la traducción de algunas variables o funciones y decidí dejarlo así para no romper la funcionalidad. 
 
 #### V02: 
  - Se eliminó el readme de las tarjetas porque se incuyó el mismo en este readme.

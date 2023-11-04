@@ -1,19 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TarjetaReversible from '../TarjetaReversible';
-/* imagenes */
-import VelocidadVientoImg from '../../Assets/iconos/wind.svg'
-import DireccionVientoImg from '../../Assets/iconos/windsock.svg'
-import HorizonteImg from '../../Assets/iconos/horizon.svg'
-import Luna from '../../Assets/iconos/starry-night.svg'
-import UVIndexImg from '../../Assets/iconos/uv-index.svg'
-import AmanecerImg from '../../Assets/iconos/sunrise.svg'
-import AnochecerImg from '../../Assets/iconos/moonrise.svg'
-import VisibilidadImg from '../../Assets/iconos/mist.svg'
-import HumedadImg from '../../Assets/iconos/humidity.svg'
-import LluviaIMg from '../../Assets/iconos/rain.svg'
 
-/* import ClimaAPI from './climaAPI.json' */
 
 const ContenedorHighlights = styled.div`
 display: grid;
@@ -142,53 +130,53 @@ function Highlights({ datosClima, loading }) {
 
         {/* VIENTO */}
         <TarjetaReversible
-          imagenFrente={DireccionVientoImg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/windsock-weak.svg"}
           tituloFrente="Dirección del Viento"
           contenidoFrente=""
-          imagenDorso={DireccionVientoImg}
+          imagenDorso={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/windsock.svg"}
           tituloDorso={DireccionViento()}
           contenidoDorso={""}
         />
 
         <TarjetaReversible
-          imagenFrente={VelocidadVientoImg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/wind.svg"}
           tituloFrente="Velocidad del Viento Actual"
           contenidoFrente=""
-          imagenDorso={VelocidadVientoImg}
+          imagenDorso={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/wind.svg"}
           tituloDorso={VelocidadViento}
           contenidoDorso=""
         />
         {/* AIRE */}
 
         <TarjetaReversible
-          imagenFrente={LluviaIMg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/partly-cloudy-day-rain.svg"}
           tituloFrente={"Probabilidad de Lluvias"}
           contenidoFrente=""
-          imagenDorso={LluviaIMg}
+          imagenDorso={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/rain.svg"}
           tituloDorso={probabilidadDeLluvia + "%"}
           contenidoDorso=""
         />
 
         <TarjetaReversible
-          imagenFrente={VisibilidadImg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/mist.svg"}
           tituloFrente={visibilidad}
           contenidoFrente=""
-          imagenDorso={VisibilidadImg}
+          imagenDorso={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/mist.svg"}
           tituloDorso={contVisibilidad}
           contenidoDorso="" />
 
         <TarjetaReversible
-          imagenFrente={HumedadImg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/humidity.svg"}
           tituloFrente={humedad}
           contenidoFrente=""
-          imagenDorso={HumedadImg}
+          imagenDorso={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/humidity.svg"}
           tituloDorso={contHumedad}
           contenidoDorso="" />
 
         {/* LUZ */}
 
         <TarjetaReversible
-          imagenFrente={UVIndexImg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/uv-index.svg"}
           tituloFrente="indice UV"
           contenidoFrente=""
           imagenDorso={IndiceUVSignificado().imagen}
@@ -198,19 +186,19 @@ function Highlights({ datosClima, loading }) {
         {console.log(IndiceUVSignificado().color)}
 
         <TarjetaReversible
-          imagenFrente={HorizonteImg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/horizon.svg"}
           tituloFrente="Horario del Amanecer"
           contenidoFrente=""
-          imagenDorso={AmanecerImg}
+          imagenDorso={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/sunrise.svg"}
           tituloDorso={Amanecer}
           contenidoDorso={""}
         />
 
         <TarjetaReversible
-          imagenFrente={Luna}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/falling-stars.svg"}
           tituloFrente="Horario del Anochecer"
           contenidoFrente=""
-          imagenDorso={AnochecerImg}
+          imagenDorso={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/sunset.svg"}
           tituloDorso={Anochecer}
           contenidoDorso={""}
         />

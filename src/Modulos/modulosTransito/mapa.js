@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
 import L from 'leaflet';
-import TranspJson from '../../Data/transp.json';
+
 
 const routeIconsF = (numLinea) => {
     return (
@@ -27,7 +27,7 @@ function CustomMarker({ data, iconUrl }) {
 }
 
 function Mapa({ loading, transportData }) {
-    const [selectedLine, setSelectedLine] = useState(''); // Estado para la línea seleccionada
+    const [selectedLine, setSelectedLine] = useState(''); 
     const filteredData = !loading ? transportData : [];
 
     const filteredDataByLine = filteredData.filter((item) => {

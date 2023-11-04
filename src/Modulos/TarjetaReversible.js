@@ -27,7 +27,7 @@ const Frente = styled.div`
   transform: rotateY(0deg);
   transition: transform 0.5s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  background-color: #EAF4F4; /* Fondo del lado frontal */
+  background-color: #EAF4F4;
 
   & img {
     height: 55%;
@@ -35,7 +35,7 @@ const Frente = styled.div`
   }
 
   &:hover {
-    background-color: #cce3de; /* Cambia el color de fondo en hover */
+    background-color: #cce3de; 
   }
 
   ${TarjetaContainer}:hover & {

@@ -3,16 +3,8 @@ import styled from 'styled-components';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 /* componente tarjetas */
 import TarjetaReversible from '../TarjetaReversible';
-/* import TarjetaEstatica from '../TarjetaEstatica'; */
-/* imagenes */
-import TemperaturaImg from '../../Assets/iconos/thermometer-celsius.svg'
-import TemperaturaMaxImg from '../../Assets/iconos/thermometer-warmer.svg'
-import TemperaturaMinImg from '../../Assets/iconos/thermometer-colder.svg'
-import EstadoClimaImg from '../../Assets/iconos/rainbow-clear.svg'
 /* JSON */
 import CodigoClima from '../../Data/codigoClima.json'
-
-/* import ClimaAPI from './climaAPI.json' */
 
 const ContenedorTemp = styled.div`
   display: grid;
@@ -108,50 +100,49 @@ function Temperatura({ datosClima, loading }) {
 
         <Tarjeta
           className="tarjeta1"
-          imagenFrente={EstadoClimaImg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/rainbow-clear.svg"}
           tituloFrente={"Estado del Clima"}
           contenidoFrente=""
           imagenDorso={IconoEstadoClima}
           tituloDorso={NombreEstadoClima}
           contenidoDorso={""}
-          colorFondoContenido={""} // Calcula el color de fondo
+          colorFondoContenido={""} 
         />
 
         <TarjetaReversible
           className="tarjeta2"
-          imagenFrente={TemperaturaImg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/thermometer.svg"}
           tituloFrente={"Temperatura Actual : " + TempActual + "°C"}
           contenidoFrente={"Temperatura Actual en °F: " + CaF(TempActual) + "°F"}
-          imagenDorso={TemperaturaImg}
+          imagenDorso={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/thermometer.svg"}
           tituloDorso={"Temperatura Actual : " + TempActual + "°C"}
           contenidoDorso={"Temperatura Actual en °F: " + CaF(TempActual) + "°F"}
-          colorFondoContenido={calcularColorFondo(TempActual)} // Calcula el color de fondo
+          colorFondoContenido={calcularColorFondo(TempActual)} 
         />
 
         <TarjetaReversible
           className="tarjeta3"
-          imagenFrente={TemperaturaMaxImg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/thermometer-warmer.svg"}
           tituloFrente={"Temperatura Máxima del día"}
           contenidoFrente=""
-          imagenDorso={TemperaturaMaxImg}
+          imagenDorso={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/thermometer-warmer.svg"}
           tituloDorso={TempMax + " °C"}
           contenidoDorso={"Temperatura Máxima en °F: " + CaF(TempMax) + "°F"}
-          colorFondoContenido={calcularColorFondo(TempMax)} // Calcula el color de fondo
+          colorFondoContenido={calcularColorFondo(TempMax)} 
         />
 
         <TarjetaReversible
           className="tarjeta4"
-          imagenFrente={TemperaturaMinImg}
+          imagenFrente={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/thermometer-colder.svg"}
           tituloFrente={"Temperatura Mínima del día"}
           contenidoFrente=""
-          imagenDorso={TemperaturaMinImg}
+          imagenDorso={"https://bmcdn.nl/assets/weather-icons/v3.0/fill/svg/thermometer-colder.svg"}
           tituloDorso={tempMin + " °C"}
           contenidoDorso={"Temperatura Mínima en °F: " + CaF(tempMin) + "°F"}
-          colorFondoContenido={calcularColorFondo(tempMin)} // Calcula el color de fondo
+          colorFondoContenido={calcularColorFondo(tempMin)} 
         />
 
         <ContendorGraficos className='grafico'>
-
           <p>Gráfico de temperatura a lo largo del día</p>
           <LineChart width={900} height={200} data={datosTemperaturaHoy}>
             <XAxis dataKey="hora" />

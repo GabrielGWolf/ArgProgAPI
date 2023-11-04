@@ -2,7 +2,6 @@ import React, { createContext, useEffect, useState } from 'react';
 import './App.css';
 import ClimaDashboard from './Modulos/modulosClima/climaDashboard';
 import TransitoDashboard from './Modulos/modulosTransito/transitoDashboard';
-import ClimaDashboard2 from './Modulos/modulosClima/climaDashboard2'
 import styled from 'styled-components';
 import './Assets/App.css'
 
@@ -14,12 +13,12 @@ const ContenedorApp = styled.div`
   padding: 0.01vh 0.01vw;
   `
 const Clima = styled.div`
-flex: 1; /* Ocupa el 50% del espacio disponible */
-  padding: 10px; /* Añade espacio de relleno si es necesario */
+flex: 1; 
+  padding: 10px; 
 `
 const Transito = styled.div`
-  flex: 1; /* Ocupa el 50% del espacio disponible */
-  padding: 10px; /* Añade espacio de relleno si es necesario */
+  flex: 1; 
+  padding: 10px;
 `
   // set the defaults
  export const DiaContext = createContext({
@@ -47,12 +46,9 @@ function App() {
         <button onClick={toggleDarkMode}>
           Cambiar Color
         </button>
-        {/*       <Clima >
+      <Clima >
         <ClimaDashboard darkMode={darkMode} />
-      </Clima> */}
-        <Clima >
-          <ClimaDashboard2 darkMode={darkMode} />
-        </Clima>
+      </Clima>
       <Transito>
         <TransitoDashboard darkMode={darkMode} />
       </Transito>

@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import TarjetaEstatica from '../TarjetaEstatica'
-/* import ClimaAPI from './climaAPI.json' */
-
 
 const DiaContainer = styled.div`
 max-height: 10vh;
@@ -15,9 +13,12 @@ text-overflow: ellipsis;
 overflow: auto;
 `;
 
-function Dia({ loading, datosClima, pais,  ciudad}) {
+function Dia({ loading, datosClima, pais, ciudad }) {
 
-  const Fecha = String(datosClima.current_weather.time).slice(0, 10)
+  const FechaApi = String(datosClima.current_weather.time).slice(0, 10)
+  const partesFecha = FechaApi.split("-");
+  const Fecha = `${partesFecha[2]}-${partesFecha[1]}-${partesFecha[0]}`;
+
   const Hora = String(datosClima.current_weather.time).slice(-5)
 
 
@@ -34,7 +35,7 @@ function Dia({ loading, datosClima, pais,  ciudad}) {
       <DiaContainer>
         <TarjetaEstatica
           titulo={"Fecha: " + Fecha}
-          contenido={"Hora: " + Hora}
+          contenido={"Hora en Argentina: " + Hora}
         />
 
         <TarjetaEstatica

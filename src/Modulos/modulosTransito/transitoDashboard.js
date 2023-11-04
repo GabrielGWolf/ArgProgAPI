@@ -40,8 +40,6 @@ function TransitoDashboard() {
     <ContenedorGral>
       <h1>Colectivos de la Ciudad de Buenos Aires</h1>
 
-      {/* Desplegable para seleccionar una línea */}
-
       <select value={selectedLine} onChange={(e) => setSelectedLine(e.target.value)}>
         <option value="">Seleccione una opción</option>
         {Object.keys(Conversion).map((routeName, index) => (

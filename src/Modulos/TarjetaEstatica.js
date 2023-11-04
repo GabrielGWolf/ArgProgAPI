@@ -9,8 +9,8 @@ const TarjetaSContainer = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: #EAF4F4; /* Color de fondo de la tarjeta */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombreado para dar profundidad */
+  background-color: #EAF4F4;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
   transition: background-color 0.3s ease;
 
   & img {
@@ -19,12 +19,12 @@ const TarjetaSContainer = styled.div`
   }
 
   &:hover {
-    background-color: #CAD2C5; /* Cambia el color de fondo en hover */
+    background-color: #CAD2C5; 
   }
 `;
 
 const TarjetaStaticContenido = styled.div`
-  color: black; /* Color del texto */
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
