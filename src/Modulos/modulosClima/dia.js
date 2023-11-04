@@ -15,7 +15,7 @@ text-overflow: ellipsis;
 overflow: auto;
 `;
 
-function Dia({ loading, datosClima }) {
+function Dia({ loading, datosClima, pais,  ciudad}) {
 
   const Fecha = String(datosClima.current_weather.time).slice(0, 10)
   const Hora = String(datosClima.current_weather.time).slice(-5)
@@ -38,8 +38,8 @@ function Dia({ loading, datosClima }) {
         />
 
         <TarjetaEstatica
-          titulo={"Provincia: Tucumán"}
-          contenido={"Ciudad: San Miguel de Tucumán"}
+          titulo={"País: " + pais}
+          contenido={"Ciudad: " + ciudad}
         />
       </DiaContainer>
     );

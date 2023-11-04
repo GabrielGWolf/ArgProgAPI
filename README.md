@@ -18,7 +18,8 @@ Quedan alunos puntos definidos en el CSS general que a futuro deben ser corregid
 ## Elecciones de Diseño
 #### v02: 
  - se mantiene la misma decisión de colores y tamaños. 
-
+ - El módulo referente al Mapa no se adapta bien a los tamaños, no es todo lo responsibe que me gustaría. 
+ 
 Aún estoy intentando que todo pueda mostrarse en una sola pantalla
 
 #### V 01:
@@ -55,13 +56,26 @@ pero planeo cambiar los colores nuevamente.
 ## Contenido:
 
 #### v 02: 
- - Se agregó el módulo de transporte, que se conecta con su API, pero al dar errores la API, se optó por conectarlo con un JSON estático de forma tal que se puedan mostrar los datos correspondientes
+##### 21/10/23
+
+ - Se agregó el módulo de transporte, que se conecta con su API, pero al dar errores la API, se optó por conectarlo con un JSON estático de forma tal que se puedan mostrar los datos correspondientes.
  - Se trabajó en el módulo transporte primero para mostrar siempre el mapa, ya que al principio se volvia a renderizar completo cada 31 segundos, con cada pedido a la API. Esto pudo corregirse pasando la propiedad loading a cada sector donde fuera necesario.
  - Se mejoró en la clase del sábado 21/10, en conjunto con los profesores, el módulo "mapa" para que pueda mapear automaticamente las lineas de colectivo y traer los íconos desde la pagina https://www.xcolectivo.com.ar/
  - cabe aclarar que la API no está funcioando correctamente a la fecha, por lo que se utiliza el JSON tomado de la misma, por lo menos hasta corroborar que la misma funcione.
 
  API: https://apitransporte.buenosaires.gob.ar/colectivos/vehiclePositionsSimple?client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6
  Íconos: https://www.xcolectivo.com.ar/imagenes/colectivos/identificador/linea${route_id}.jpg
+
+##### 28/10/23
+
+- Se regresó a la API con una nueva llamda que nos propuso el profesor Guido Ivetta. Esta nueva llamada implica un filtrado por "route_id" previo, que no lo hacemos nosotros, sino que lo llamad desde la API para traer menos datos. 
+Esto implicó hacer cambios en los módulos y en las formas de filtado que teníamos armado. 
+
+API: https://apitransporte.buenosaires.gob.ar/colectivos/vehiclePositionsSimple?route_id=${idRuta}&client_id=cb6b18c84b3b484d98018a791577af52&client_secret=3e3DB105Fbf642Bf88d5eeB8783EE1E6
+
+- Se cambió la selección de la linea de colectivo de módulo. Esto fue necesario para que en vez de filtrar sobre la API total, la nueva llamada nos obliga a seleccionar que recorrido vamos a mostrar, y las lineas pueden tener más de un recorrido, además del mismo en formato "ida" y "vuelta" . 
+Por lo tanto, tuve que crear un JSON con una forma de "filtro manual" seleccionado algunas de las lineas disponibles de todo el transporte publico de de Buenos Aires, y mostrar sólo las que fueron elegidas.
+Probé con una forma de "map" que me permitía ver y seleccionar cualquier linea, pero el desplegable se volvia imposible de manejar por el tamaño que tenía. 
 
 #### V 01: 
  - Ya se conecta todo con la API y trae los datos como corresponden. Se mantiene el archivo JSON para consulta de las categorías y pruebas que puedan provocar errores (básicamente para poder hacer Debug)
@@ -79,6 +93,11 @@ pero planeo cambiar los colores nuevamente.
 
 ## Extras: 
 
+#### V02: 
+ - Se eliminó el readme de las tarjetas porque se incuyó el mismo en este readme.
+ - Aún existen algunos JSON demas en la carpeta src/Data pero se mejorará la limpieza y el orden del código para la próxima entrega. Lo mismo que sucede con la carpeta src/Assets/iconos 
+
+ 
 #### V01:
 Se mantiene lo realizado en la V00 pero se hicieron algunos cambios graficos en los modulos de las tarjetas. La funcionalida de las mismas sigue siendo igual.-
 

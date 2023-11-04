@@ -90,15 +90,13 @@ const TarjetaReversible = ({
     <TarjetaContainer>
       <Frente>
         <img src={imagenFrente} alt="Frente" />
-        <p>{tituloFrente}</p>
-        <p>{contenidoFrente}</p>
+        <span>{tituloFrente}</span>
+        <span>{contenidoFrente}</span><br />
       </Frente>
       <Dorso colorFondoContenido={colorFondoContenido}>
         <img src={imagenDorso} alt="Dorso" />
-        <p>{tituloDorso}</p>
-        <div className="contenido">
-          <p>{contenidoDorso}</p>
-        </div>
+        <span>{tituloDorso}</span>
+        <span>{contenidoDorso}</span><br />
       </Dorso>
     </TarjetaContainer>
   );

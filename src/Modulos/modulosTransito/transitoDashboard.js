@@ -22,7 +22,6 @@ function TransitoDashboard() {
       .then((data) => {
         setTransportData(data);
         setLoading(false);
-        console.log(apiUrl)
       })
       .catch((ex) => {
         console.error(ex);
@@ -35,10 +34,6 @@ function TransitoDashboard() {
       fetchdata(Conversion[selectedLine])
     }, 31000);
     return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    fetchdata(Conversion[selectedLine])
   }, [selectedLine]);
 
   return (
