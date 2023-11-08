@@ -4,7 +4,7 @@ import Temperatura from './temperatura';
 import styled from 'styled-components';
 import Dia from './dia';
 import { PacmanLoader } from 'react-spinners';
-import { DiaContext } from '../../App' 
+import { DiaContext } from '../../App'
 
 const ContenedorGral = styled.div`
   display: grid;
@@ -12,6 +12,11 @@ const ContenedorGral = styled.div`
   grid-template-rows: repeat(1, 1fr);
   gap: 10px;
 `;
+
+const Selectordia = styled.div`
+  align: center
+  `;
+
 const ContenedorClima = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -38,13 +43,13 @@ const ClimaDashboard = () => {
   // const geoApiUrl = "https://geocoding-api.open-meteo.com/v1/search?name=tucuman&count=1&language=es&format=json"; - dejo la api original de referencia
 
   const fetchWeatherData = (latitude, longitude) => {
-  const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation_probability,weathercode,visibility,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&current_weather=true&timezone=America%2FSao_Paulo&forecast_days=1`;
+    const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation_probability,weathercode,visibility,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&current_weather=true&timezone=America%2FSao_Paulo&forecast_days=1`;
     setLoading(true);
     fetch(apiUrl)
       .then((resp) => resp.json())
       .then((data) => {
         setWeatherData(data);
-        setEsDeDia(data.current_weather.is_day === 1)  
+        setEsDeDia(data.current_weather.is_day === 1)
         setLoading(false);
       })
       .catch((ex) => {
@@ -62,7 +67,7 @@ const ClimaDashboard = () => {
           const lat = data.results[0].latitude;
           const lon = data.results[0].longitude;
           fetchWeatherData(lat, lon)
-          setCiudad(data.results[0].name) 
+          setCiudad(data.results[0].name)
           setPais(data.results[0].country)
         })
         .catch((ex) => {
@@ -91,15 +96,16 @@ const ClimaDashboard = () => {
   } else {
     return (
       <ContenedorGral>
+        <Selectordia>
 
-        <input
-          type="text"
-          placeholder="Nombre de la ciudad"
-          value={customLocation}
-          onChange={(e) => setCustomLocation(e.target.value)}
-        />
-        <button onClick={fetchLocationCoordinates}>Obtener clima para esta ubicación</button>
-
+          <input
+            type="text"
+            placeholder="Nombre de la ciudad"
+            value={customLocation}
+            onChange={(e) => setCustomLocation(e.target.value)}
+          />
+          <button onClick={fetchLocationCoordinates}>Obtener clima para esta ubicación</button>
+        </Selectordia>
         {!loading && <Dia pais={pais} ciudad={ciudad} datosClima={weatherData} loading={loading} />}
         <ContenedorClima>
           <SeccionTemperatura>

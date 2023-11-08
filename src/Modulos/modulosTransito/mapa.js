@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
 import L from 'leaflet';
 
+const ContenedorMapa = styled.div`
+  display: block;
+  height: 100%;
+  width: 100%
+`;
 
 const routeIconsF = (numLinea) => {
     return (
@@ -36,7 +42,7 @@ function Mapa({ loading, transportData }) {
     });
 
     return (
-        <>
+        <ContenedorMapa>
             <MapContainer center={[-34.60376, -58.38162]} zoom={9.5} style={{ height: '400px', width: '100%' }}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -48,7 +54,7 @@ function Mapa({ loading, transportData }) {
                     return <CustomMarker key={index} data={item} iconUrl={iconUrl} />;
                 })}
             </MapContainer>
-        </>
+        </ContenedorMapa>
     );
 }
 

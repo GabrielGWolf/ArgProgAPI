@@ -5,6 +5,8 @@ import Conversion from '../../Data/conversion.json'
 
 const ContenedorGral = styled.div`
   display: block;
+  height: 100%;
+  width: 100%
 `;
 
 function TransitoDashboard() {

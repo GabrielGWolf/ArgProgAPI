@@ -11,6 +11,8 @@ gap: 5px;
 overflow: hidden;
 text-overflow: ellipsis;
 overflow: auto;
+width: 100%;
+align: center
 `;
 
 function Dia({ loading, datosClima, pais, ciudad }) {

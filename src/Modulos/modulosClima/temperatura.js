@@ -43,6 +43,7 @@ const ContendorGraficos = styled.div`
   background-color: #EAF4F4;
   color: #2F3E46;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width:100%
 `;
 
 function Temperatura({ datosClima, loading }) {

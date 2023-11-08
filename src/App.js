@@ -11,6 +11,8 @@ const ContenedorApp = styled.div`
   text-align: center;
   margin: 0.01vh 0.01vw;
   padding: 0.01vh 0.01vw;
+  height: 99%;
+  width: 99%
   `
 const Clima = styled.div`
 flex: 1; 
