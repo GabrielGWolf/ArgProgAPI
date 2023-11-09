@@ -42,6 +42,7 @@ const ClimaDashboard = () => {
 
   // const geoApiUrl = "https://geocoding-api.open-meteo.com/v1/search?name=tucuman&count=1&language=es&format=json"; - dejo la api original de referencia
 
+
   const fetchWeatherData = (latitude, longitude) => {
     const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation_probability,weathercode,visibility,windspeed_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset,uv_index_max&current_weather=true&timezone=America%2FSao_Paulo&forecast_days=1`;
     setLoading(true);

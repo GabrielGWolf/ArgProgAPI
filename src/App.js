@@ -1,9 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
-import './App.css';
 import ClimaDashboard from './Modulos/modulosClima/climaDashboard';
 import TransitoDashboard from './Modulos/modulosTransito/transitoDashboard';
 import styled from 'styled-components';
-import './Assets/App.css'
 
 const ContenedorApp = styled.div`
   background-color: ${props => (props.darkMode ? '#354F52' : '#F6FFF8')};
@@ -22,11 +20,12 @@ const Transito = styled.div`
   flex: 1; 
   padding: 10px;
 `
-  // set the defaults
+// crea el contexto y setea los "default"
  export const DiaContext = createContext({
     esDeDia: true,
     setEsDeDia: () => { }
   });
+
 
 function App() {
 

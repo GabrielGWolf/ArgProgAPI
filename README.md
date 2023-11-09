@@ -5,13 +5,14 @@ El objetivo principal es poder utilizar información brindada por una API para a
 
 ## CSS y Styled-Components
 #### v 03: 
-Todo configurado con Styled Components. Se eliminan los archivos css innecesarios y se deja solamente un css que utilicé de refencia para poder probar la paleta de colores. 
+Todo configurado con Styled Components. Se eliminan los archivos css innecesarios. 
+
 
 #### V 02:
 Sin cambios
 
 #### V 01:
-Ya se corrigió todo para que use Styled-components. Ya no es necesario el archivo .css pero se mantiene para consulta de las paletas de colores y otras funciones.
+Ya se corrigió todo para que use Styled-components. Ya no es necesario el archivo .css, pero se mantiene para consulta de las paletas de colores y otras funciones.
 
 #### V 00: 
 Primero programe utilizando un solo CSS general
@@ -111,6 +112,7 @@ Probé con una forma de "map" que me permitía ver y seleccionar cualquier linea
 #### v03:
   - se modificó la forma en la que se muestran los datos dentro de las tarjetas, cambiando <p></p> por <span></span><br />
   - me hubiera gustado mejorar un poco mas la cuestión de idioma en el código y la programación, dejando todo en inglés o en castellano, pero me enrede con la traducción de algunas variables o funciones y decidí dejarlo así para no romper la funcionalidad. 
+  - se limpió el codigo lo más posible, para quitar todo lo que no fuera escencialmente explicativo o necesario para el funcionamiento.
 
 #### V02: 
  - Se eliminó el readme de las tarjetas porque se incuyó el mismo en este readme.
